@@ -47,7 +47,7 @@
   <header>
     <h2><a href="/custom-sublime-text-build-system-for-python-on-fedora-22.html#custom-sublime-text-build-system-for-python-on-fedora-22">Custom Sublime Text build system for python on Fedora 22</a></h2>
     <p>
-      Posted on Sun 08 November 2015 in <a href="/category/sublime-text.html">Sublime Text</a>
+      Posted on Mon 09 November 2015 in <a href="/category/sublime-text.html">Sublime Text</a>
       &#8226; Tagged with
       <a href="/tag/sublime-text.html">sublime text</a>,      <a href="/tag/build-system.html">build system</a>    </p>
   </header>
@@ -62,6 +62,58 @@
 <span class="p">}</span> 
 </pre></div>
       <a class="btn" href="/custom-sublime-text-build-system-for-python-on-fedora-22.html#custom-sublime-text-build-system-for-python-on-fedora-22">Continue reading</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="/subprocess-usage.html#subprocess-usage">Subprocess usage</a></h2>
+    <p>
+      Posted on Mon 09 November 2015 in <a href="/category/python.html">Python</a>
+      &#8226; Tagged with
+      <a href="/tag/python.html">python</a>,      <a href="/tag/subprocess.html">subprocess</a>    </p>
+  </header>
+  <div>
+      <p>Let's view several cases.</p>
+<p><a href="https://docs.python.org/2/library/subprocess.html#subprocess.call" target="_blank">subprocess.call(args, *, stdin=None, stdout=None, stderr=None, shell=False)</a></p>
+<table>
+<thead>
+<tr>
+<th>args</th>
+<th>shell</th>
+<th>executable</th>
+<th>result</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>'ls -l'</td>
+<td>False</td>
+<td>ls -l</td>
+<td>exception [Errno 2] No such file or directory</td>
+<td></td>
+</tr>
+<tr>
+<td>'ls -l'</td>
+<td>True</td>
+<td>/bin/sh</td>
+<td>OK</td>
+<td></td>
+</tr>
+<tr>
+<td>['ls', '-l']</td>
+<td>False</td>
+<td>ls</td>
+<td>OK</td>
+<td></td>
+</tr>
+<tr>
+<td>['ls', '-l']</td>
+<td>True</td>
+<td>/bin/sh</td>
+<td>only ...</td></tr></tbody></table>
+      <a class="btn" href="/subprocess-usage.html#subprocess-usage">Continue reading</a>
   </div>
 </article>
 

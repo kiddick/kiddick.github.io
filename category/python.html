@@ -30,12 +30,11 @@
       <nav>
         <ul class="list">
           <li><a href="http://github.com/kiddick" target="_blank">github</a></li>
-          <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
         </ul>
       </nav>
       <ul class="social">
-        <li><a class="sc-You can add links in your config file" href="#" target="_blank"><i class="fa fa-You can add links in your config file"></i></a></li>
-        <li><a class="sc-Another social link" href="#" target="_blank"><i class="fa fa-Another social link"></i></a></li>
+        <li><a class="sc-github" href="http://github.com/kiddick" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-stack-overflow" href="http://stackoverflow.com/users/3990145/xi" target="_blank"><i class="fa fa-stack-overflow"></i></a></li>
       </ul>
     </div>
   </aside>
@@ -46,29 +45,53 @@
 
 <article>
   <header>
-    <h2><a href="/my-super-title.html#my-super-title">My super title</a></h2>
+    <h2><a href="/subprocess-usage.html#subprocess-usage">Subprocess usage</a></h2>
     <p>
-      Posted on Sun 08 November 2015 in <a href="/category/python.html">Python</a>
+      Posted on Mon 09 November 2015 in <a href="/category/python.html">Python</a>
       &#8226; Tagged with
-      <a href="/tag/pelican.html">pelican</a>,      <a href="/tag/publishing.html">publishing</a>    </p>
+      <a href="/tag/python.html">python</a>,      <a href="/tag/subprocess.html">subprocess</a>    </p>
   </header>
   <div>
-      <p>This is the content of my super blog post.</p>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">logging</span>
-
-<span class="c"># create logger</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">&#39;simple_example&#39;</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
-
-<span class="c"># create console handler and set level to debug</span>
-<span class="n">ch</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
-<span class="n">ch</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
-
-<span class="c"># create formatter</span>
-<span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%(asctime)s</span><span class="s"> - </span><span class="si">%(name)s</span><span class="s"> - </span><span class="si">%(levelname)s</span><span class="s"> - </span><span class="si">%(message)s</span><span class="s">&#39;</span><span class="p">)</span>
-
-<span class="c"># add ...</span></pre></div>
-      <a class="btn" href="/my-super-title.html#my-super-title">Continue reading</a>
+      <p>Let's view several cases.</p>
+<p><a href="https://docs.python.org/2/library/subprocess.html#subprocess.call" target="_blank">subprocess.call(args, *, stdin=None, stdout=None, stderr=None, shell=False)</a></p>
+<table>
+<thead>
+<tr>
+<th>args</th>
+<th>shell</th>
+<th>executable</th>
+<th>result</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>'ls -l'</td>
+<td>False</td>
+<td>ls -l</td>
+<td>exception [Errno 2] No such file or directory</td>
+<td></td>
+</tr>
+<tr>
+<td>'ls -l'</td>
+<td>True</td>
+<td>/bin/sh</td>
+<td>OK</td>
+<td></td>
+</tr>
+<tr>
+<td>['ls', '-l']</td>
+<td>False</td>
+<td>ls</td>
+<td>OK</td>
+<td></td>
+</tr>
+<tr>
+<td>['ls', '-l']</td>
+<td>True</td>
+<td>/bin/sh</td>
+<td>only ...</td></tr></tbody></table>
+      <a class="btn" href="/subprocess-usage.html#subprocess-usage">Continue reading</a>
   </div>
 </article>
 

@@ -17,7 +17,7 @@
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content=""/>
-  <title>xi blog &ndash; Tag: sublime text</title>
+  <title>xi blog &ndash; Tag: python</title>
 </head>
 <body>
   <aside>
@@ -45,23 +45,53 @@
 
 <article>
   <header>
-    <h2><a href="/custom-sublime-text-build-system-for-python-on-fedora-22.html#custom-sublime-text-build-system-for-python-on-fedora-22">Custom Sublime Text build system for python on Fedora 22</a></h2>
+    <h2><a href="/subprocess-usage.html#subprocess-usage">Subprocess usage</a></h2>
     <p>
-      Posted on Mon 09 November 2015 in <a href="/category/sublime-text.html">Sublime Text</a>
+      Posted on Mon 09 November 2015 in <a href="/category/python.html">Python</a>
       &#8226; Tagged with
-      <a href="/tag/sublime-text.html">sublime text</a>,      <a href="/tag/build-system.html">build system</a>    </p>
+      <a href="/tag/python.html">python</a>,      <a href="/tag/subprocess.html">subprocess</a>    </p>
   </header>
   <div>
-      <p>We need to configure custom build system in Sublime Text. The main requirement is possibility to execute code in new window.</p>
-<p>Let's create new build system.</p>
-<p>Tools &gt; Build System &gt; New Build System...</p>
-<p>Configuration is below.</p>
-<div class="highlight"><pre><span class="p">{</span>
-    <span class="s">&quot;cmd&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;gnome-terminal&quot;</span><span class="p">,</span> <span class="s">&quot;-x&quot;</span><span class="p">,</span> <span class="s">&quot;bash&quot;</span><span class="p">,</span> <span class="s">&quot;-c&quot;</span><span class="p">,</span> <span class="s">&quot;python $file; read&quot;</span><span class="p">],</span> <span class="c"># run new terminal</span>
-    <span class="s">&quot;shell&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-<span class="p">}</span> 
-</pre></div>
-      <a class="btn" href="/custom-sublime-text-build-system-for-python-on-fedora-22.html#custom-sublime-text-build-system-for-python-on-fedora-22">Continue reading</a>
+      <p>Let's view several cases.</p>
+<p><a href="https://docs.python.org/2/library/subprocess.html#subprocess.call" target="_blank">subprocess.call(args, *, stdin=None, stdout=None, stderr=None, shell=False)</a></p>
+<table>
+<thead>
+<tr>
+<th>args</th>
+<th>shell</th>
+<th>executable</th>
+<th>result</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>'ls -l'</td>
+<td>False</td>
+<td>ls -l</td>
+<td>exception [Errno 2] No such file or directory</td>
+<td></td>
+</tr>
+<tr>
+<td>'ls -l'</td>
+<td>True</td>
+<td>/bin/sh</td>
+<td>OK</td>
+<td></td>
+</tr>
+<tr>
+<td>['ls', '-l']</td>
+<td>False</td>
+<td>ls</td>
+<td>OK</td>
+<td></td>
+</tr>
+<tr>
+<td>['ls', '-l']</td>
+<td>True</td>
+<td>/bin/sh</td>
+<td>only ...</td></tr></tbody></table>
+      <a class="btn" href="/subprocess-usage.html#subprocess-usage">Continue reading</a>
   </div>
 </article>
 
