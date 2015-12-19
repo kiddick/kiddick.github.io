@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xi blog</title><link href="/" rel="alternate"></link><link href="/feeds/web-desing.atom.xml" rel="self"></link><id>/</id><updated>2015-12-19T00:00:00+03:00</updated><entry><title>First steps with design of this blog</title><link href="/first-steps-with-design-of-this-blog.html" rel="alternate"></link><updated>2015-12-19T00:00:00+03:00</updated><author><name>xi</name></author><id>tag:,2015-12-19:first-steps-with-design-of-this-blog.html</id><summary type="html">&lt;p&gt;I am getting this course on &lt;a href="https://www.codecademy.com/learn/web"&gt;HTML &amp;amp; CSS | Codecademy&lt;/a&gt; and I'll try to apply some skills gained on this course right here.&lt;/p&gt;
+&lt;p&gt;So I am starting with basic CSS for my pages.
+First of all I want center body of pages and limit by some way width of block wit blog post.&lt;/p&gt;
+&lt;p&gt;Seems it is possible by appllying fixed width and margin property to a body.
+May be it is not good idea to do it with body and I shoud create another ID for that. But for a while I think it is enough due to I have really poor expirience with CSS.
+Probably later that should be changed.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.oxfordlearnersdictionaries.com/definition/english/margin?q=margin"&gt;Margin&lt;/a&gt; it is a new word for me and according to oxford dict it is a&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;the empty space at the side of a written or printed page&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Good to know!&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.w3schools.com/css/css_margin.asp"&gt;CSS Margin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It is possible to specify margin for each side of and element separately.&lt;/p&gt;
+&lt;p&gt;I have faced with:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;margin&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="n"&gt;auto&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and was not sure how I shoud interpret that.&lt;/p&gt;
+&lt;p&gt;But according to example from documentation:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;margin&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;bottom&lt;/span&gt; &lt;span class="n"&gt;margins&lt;/span&gt; &lt;span class="n"&gt;are&lt;/span&gt; &lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt;
+    &lt;span class="n"&gt;right&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;left&lt;/span&gt; &lt;span class="n"&gt;margins&lt;/span&gt; &lt;span class="n"&gt;are&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It sets &lt;code&gt;0&lt;/code&gt; for &lt;code&gt;top and bottom&lt;/code&gt; and &lt;code&gt;auto&lt;/code&gt; for &lt;code&gt;right and left&lt;/code&gt; borders.&lt;/p&gt;
+&lt;p&gt;Related question &lt;a href="http://stackoverflow.com/questions/3170772/what-does-auto-do-in-margin0-auto"&gt;css - What does auto do in margin:0 auto? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I'll reffer to SO for a abilty to refresh knowledge quickly in future.&lt;/p&gt;
+&lt;p&gt;I've just remembered some distinction in meaning of possibility and opportunity in english. I need to check it later.&lt;/p&gt;
+&lt;p&gt;So if we want to center element horizontally we need additionaly set width to elemtent.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://stackoverflow.com/questions/963636/why-cant-i-center-with-margin-0-auto"&gt;html - Why can't I center with margin: 0 auto? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Some informaton about CSS units for expressing a length:
+&lt;a href="http://www.w3schools.com/cssref/css_units.asp"&gt;CSS Units&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;em
+Relative to the font-size of the element (2em means 2 times the size of the current font)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;The CSS padding properties define the white space between the element content and the element border.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It is possible to specify padding for each side of and element separately too. There is same approach.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.w3schools.com/css/css_padding.asp"&gt;CSS Padding&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Border settings&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.w3schools.com/css/css_border.asp"&gt;CSS Borders&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Shorten code to set up all proberties simultaneously:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="nt"&gt;border-width&lt;/span&gt;
+    &lt;span class="nt"&gt;border-style&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;required&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="nt"&gt;border-color&lt;/span&gt;
+
+    &lt;span class="nt"&gt;p&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;border&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;5px&lt;/span&gt; &lt;span class="k"&gt;solid&lt;/span&gt; &lt;span class="nb"&gt;red&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;For now it looks:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="design" src="images/2015_12_19_1.png" /&gt;&lt;/p&gt;</summary><category term="HTML"></category><category term="CSS"></category></entry></feed>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <title>xi blog</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+
+
+    <meta name="tags" content="HTML" />
+    <meta name="tags" content="CSS" />
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">xi blog <strong></strong></a></h1>
+        </header><!-- /#banner -->
+        <nav id="menu"><ul>
+        </ul></nav><!-- /#menu -->
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/first-steps-with-design-of-this-blog.html" rel="bookmark"
+         title="Permalink to First steps with design of this blog">First steps with design of this blog</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2015-12-19T00:00:00+03:00">
+      Sat 19 December 2015
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/xi.html">xi</a>
+    </address>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>I am getting this course on <a href="https://www.codecademy.com/learn/web">HTML &amp; CSS | Codecademy</a> and I'll try to apply some skills gained on this course right here.</p>
+<p>So I am starting with basic CSS for my pages.
+First of all I want center body of pages and limit by some way width of block wit blog post.</p>
+<p>Seems it is possible by appllying fixed width and margin property to a body.
+May be it is not good idea to do it with body and I shoud create another ID for that. But for a while I think it is enough due to I have really poor expirience with CSS.
+Probably later that should be changed.</p>
+<p><a href="http://www.oxfordlearnersdictionaries.com/definition/english/margin?q=margin">Margin</a> it is a new word for me and according to oxford dict it is a</p>
+<blockquote>
+<p>the empty space at the side of a written or printed page</p>
+</blockquote>
+<p>Good to know!</p>
+<p><a href="http://www.w3schools.com/css/css_margin.asp">CSS Margin</a></p>
+<p>It is possible to specify margin for each side of and element separately.</p>
+<p>I have faced with:</p>
+<div class="highlight"><pre><span class="n">margin</span><span class="o">:</span> <span class="mi">0</span> <span class="n">auto</span><span class="o">;</span>
+</pre></div>
+
+
+<p>and was not sure how I shoud interpret that.</p>
+<p>But according to example from documentation:</p>
+<div class="highlight"><pre><span class="n">margin</span><span class="o">:</span> <span class="mi">25</span><span class="n">px</span> <span class="mi">50</span><span class="n">px</span><span class="o">;</span>
+    <span class="n">top</span> <span class="n">and</span> <span class="n">bottom</span> <span class="n">margins</span> <span class="n">are</span> <span class="mi">25</span><span class="n">px</span>
+    <span class="n">right</span> <span class="n">and</span> <span class="n">left</span> <span class="n">margins</span> <span class="n">are</span> <span class="mi">50</span><span class="n">px</span>
+</pre></div>
+
+
+<p>It sets <code>0</code> for <code>top and bottom</code> and <code>auto</code> for <code>right and left</code> borders.</p>
+<p>Related question <a href="http://stackoverflow.com/questions/3170772/what-does-auto-do-in-margin0-auto">css - What does auto do in margin:0 auto? - Stack Overflow</a></p>
+<p>I'll reffer to SO for a abilty to refresh knowledge quickly in future.</p>
+<p>I've just remembered some distinction in meaning of possibility and opportunity in english. I need to check it later.</p>
+<p>So if we want to center element horizontally we need additionaly set width to elemtent.</p>
+<p><a href="http://stackoverflow.com/questions/963636/why-cant-i-center-with-margin-0-auto">html - Why can't I center with margin: 0 auto? - Stack Overflow</a></p>
+<p>Some informaton about CSS units for expressing a length:
+<a href="http://www.w3schools.com/cssref/css_units.asp">CSS Units</a></p>
+<div class="highlight"><pre>em
+Relative to the font-size of the element (2em means 2 times the size of the current font)
+</pre></div>
+
+
+<blockquote>
+<p>The CSS padding properties define the white space between the element content and the element border.</p>
+</blockquote>
+<p>It is possible to specify padding for each side of and element separately too. There is same approach.</p>
+<p><a href="http://www.w3schools.com/css/css_padding.asp">CSS Padding</a></p>
+<p>Border settings</p>
+<p><a href="http://www.w3schools.com/css/css_border.asp">CSS Borders</a></p>
+<p>Shorten code to set up all proberties simultaneously:</p>
+<div class="highlight"><pre>    <span class="nt">border-width</span>
+    <span class="nt">border-style</span> <span class="o">(</span><span class="nt">required</span><span class="o">)</span>
+    <span class="nt">border-color</span>
+
+    <span class="nt">p</span> <span class="p">{</span>
+        <span class="k">border</span><span class="o">:</span> <span class="m">5px</span> <span class="k">solid</span> <span class="nb">red</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p>For now it looks:</p>
+<p><img alt="design" src="images/2015_12_19_1.png" /></p>
+  </div><!-- /.entry-content -->
+</section>
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</html>
