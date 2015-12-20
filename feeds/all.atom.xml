@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xi blog</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2015-12-19T00:00:00+03:00</updated><entry><title>First steps with design of this blog</title><link href="/first-steps-with-design-of-this-blog.html" rel="alternate"></link><updated>2015-12-19T00:00:00+03:00</updated><author><name>xi</name></author><id>tag:,2015-12-19:first-steps-with-design-of-this-blog.html</id><summary type="html">&lt;p&gt;I am getting this course on &lt;a href="https://www.codecademy.com/learn/web"&gt;HTML &amp;amp; CSS | Codecademy&lt;/a&gt; and I'll try to apply some skills gained on this course right here.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xi blog</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2015-12-20T00:00:00+03:00</updated><entry><title>Button for continuation of reading</title><link href="/button-for-continuation-of-reading.html" rel="alternate"></link><updated>2015-12-20T00:00:00+03:00</updated><author><name>xi</name></author><id>tag:,2015-12-20:button-for-continuation-of-reading.html</id><summary type="html">&lt;p&gt;Hi folks!&lt;/p&gt;
+&lt;p&gt;Today we will try to create a simple CSS button to blog. It will be used as button for continuation reading and will be added on preview of pages block.&lt;/p&gt;
+&lt;p&gt;It should be look like:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="design" src="images/2015_12_20_1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Cool! Let's start.
+First of all we need to specify some html element for that. It could be &lt;code&gt;div&lt;/code&gt; or may be &lt;code&gt;a&lt;/code&gt;. Let's pick &lt;code&gt;a&lt;/code&gt; and create new class for that.&lt;/p&gt;
+&lt;p&gt;We should add it to our templates:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="nt"&gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;btn&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{ SITEURL }}/{{ article.url }}&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;Continue reading&lt;span class="nt"&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;So our class for that purpose named &lt;code&gt;btn&lt;/code&gt;.
+Let's care about positioning. I want to put it at the lower right corner of article preview.&lt;/p&gt;
+&lt;p&gt;It quite a hard task in CSS :)
+I am not an expert in positioning but it is really weird why there isn't an easy way to apply horizontal alignment of elements!
+Yep there are several approaches but all of them may cause to serious issues.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.w3schools.com/css/css_align.asp"&gt;CSS Layout - Horizontal Align&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Basics idea given on article, link is above.&lt;/p&gt;
+&lt;p&gt;Firstly I've tried to use &lt;code&gt;float: right&lt;/code&gt;. But it breaks my marking since according to &lt;a href="http://www.w3.org/TR/CSS21/visuren.html#floats"&gt;9.5 Floats&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Since a float is not in the flow, non-positioned block boxes created before and after the float box flow vertically as if the float did not exist. However, the current and subsequent line boxes created next to the float are shortened as necessary to make room for the margin box of the float. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That means that float formatted elements not included in common flow of elements of page. Due to that reason I've decided to use trick with &lt;code&gt;div&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I've created &lt;code&gt;div&lt;/code&gt; and putted my &lt;code&gt;&amp;lt;a class="btn"&amp;gt;&lt;/code&gt; to that &lt;code&gt;div&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="nt"&gt;margin-left&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;auto&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+    &lt;span class="nt"&gt;margin-right&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Applied some formatting to that &lt;code&gt;div&lt;/code&gt;. And Voila! Now &lt;code&gt;a&lt;/code&gt; have moved to the right together with &lt;code&gt;div&lt;/code&gt;. Quite easy!&lt;/p&gt;
+&lt;p&gt;At least need to add some styling according to my blog color scheme.
+Result:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="design" src="images/2015_12_20_2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;</summary><category term="HTML"></category><category term="CSS"></category></entry><entry><title>First steps with design of this blog</title><link href="/first-steps-with-design-of-this-blog.html" rel="alternate"></link><updated>2015-12-19T00:00:00+03:00</updated><author><name>xi</name></author><id>tag:,2015-12-19:first-steps-with-design-of-this-blog.html</id><summary type="html">&lt;p&gt;I am getting this course on &lt;a href="https://www.codecademy.com/learn/web"&gt;HTML &amp;amp; CSS | Codecademy&lt;/a&gt; and I'll try to apply some skills gained on this course right here.&lt;/p&gt;
 &lt;p&gt;So I am starting with basic CSS for my pages.
 First of all I want center body of pages and limit by some way width of block wit blog post.&lt;/p&gt;
-&lt;p&gt;Seems it is possible by appllying fixed width and margin property to a body.
-May be it is not good idea to do it with body and I shoud create another ID for that. But for a while I think it is enough due to I have really poor expirience with CSS.
+&lt;p&gt;Seems it is possible by applying fixed width and margin property to a body.
+May be it is not good idea to do it with body and I shroud create another ID for that. But for a while I think it is enough due to I have really poor experience with CSS.
 Probably later that should be changed.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.oxfordlearnersdictionaries.com/definition/english/margin?q=margin"&gt;Margin&lt;/a&gt; it is a new word for me and according to oxford dict it is a&lt;/p&gt;
 &lt;blockquote&gt;
@@ -17,7 +50,7 @@ Probably later that should be changed.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;and was not sure how I shoud interpret that.&lt;/p&gt;
+&lt;p&gt;and was not sure how I shroud interpret that.&lt;/p&gt;
 &lt;p&gt;But according to example from documentation:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;margin&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
     &lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="n"&gt;and&lt;/span&gt; &lt;span class="n"&gt;bottom&lt;/span&gt; &lt;span class="n"&gt;margins&lt;/span&gt; &lt;span class="n"&gt;are&lt;/span&gt; &lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt;
@@ -27,11 +60,11 @@ Probably later that should be changed.&lt;/p&gt;
 
 &lt;p&gt;It sets &lt;code&gt;0&lt;/code&gt; for &lt;code&gt;top and bottom&lt;/code&gt; and &lt;code&gt;auto&lt;/code&gt; for &lt;code&gt;right and left&lt;/code&gt; borders.&lt;/p&gt;
 &lt;p&gt;Related question &lt;a href="http://stackoverflow.com/questions/3170772/what-does-auto-do-in-margin0-auto"&gt;css - What does auto do in margin:0 auto? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;I'll reffer to SO for a abilty to refresh knowledge quickly in future.&lt;/p&gt;
+&lt;p&gt;I'll refer to SO for a ability to refresh knowledge quickly in future.&lt;/p&gt;
 &lt;p&gt;I've just remembered some distinction in meaning of possibility and opportunity in english. I need to check it later.&lt;/p&gt;
-&lt;p&gt;So if we want to center element horizontally we need additionaly set width to elemtent.&lt;/p&gt;
+&lt;p&gt;So if we want to center element horizontally we need additionaly set width to element.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://stackoverflow.com/questions/963636/why-cant-i-center-with-margin-0-auto"&gt;html - Why can't I center with margin: 0 auto? - Stack Overflow&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Some informaton about CSS units for expressing a length:
+&lt;p&gt;Some information about CSS units for expressing a length:
 &lt;a href="http://www.w3schools.com/cssref/css_units.asp"&gt;CSS Units&lt;/a&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;em
 Relative to the font-size of the element (2em means 2 times the size of the current font)
@@ -45,7 +78,7 @@ Relative to the font-size of the element (2em means 2 times the size of the curr
 &lt;p&gt;&lt;a href="http://www.w3schools.com/css/css_padding.asp"&gt;CSS Padding&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Border settings&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.w3schools.com/css/css_border.asp"&gt;CSS Borders&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Shorten code to set up all proberties simultaneously:&lt;/p&gt;
+&lt;p&gt;Shorten code to set up all properties simultaneously:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="nt"&gt;border-width&lt;/span&gt;
     &lt;span class="nt"&gt;border-style&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;required&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
     &lt;span class="nt"&gt;border-color&lt;/span&gt;
@@ -59,19 +92,18 @@ Relative to the font-size of the element (2em means 2 times the size of the curr
 &lt;p&gt;For now it looks:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="design" src="images/2015_12_19_1.png" /&gt;&lt;/p&gt;</summary><category term="HTML"></category><category term="CSS"></category></entry><entry><title>Blog rebooting</title><link href="/blog-rebooting.html" rel="alternate"></link><updated>2015-12-18T00:00:00+03:00</updated><author><name>xi</name></author><id>tag:,2015-12-18:blog-rebooting.html</id><summary type="html">&lt;p&gt;Hi there!&lt;/p&gt;
 &lt;p&gt;I've decided to reboot my blog!
-Since I'am trying to learn some javascript I need some real practice with it.
+Since I'm trying to learn some javascript I need some real practice with it.
 I should at the same time learn and refresh some basics HTML and CSS.
 So I'll try to build theme and other stuff for this blog from scratch.&lt;/p&gt;
-&lt;p&gt;Yeah it is porpaply :) ugly for now. But I'll do my best!
+&lt;p&gt;Yeah it is probably :) ugly for now. But I'll do my best!
 So additionally I'll try to write more articles with different topics cuz I need some practice in english too.&lt;/p&gt;
 &lt;p&gt;May be som enotes with rules, etc.
 Just need to write a liitle bit more than just a couple of words!&lt;/p&gt;
 &lt;p&gt;Huh, I am trying to remember some good words to express though with meaning - stay with me, but I cant. Something like dont lose attention or don't go further from reading.&lt;/p&gt;
-&lt;p&gt;But in generall it is at the same fun and hard to express thoughts in english.
-Sometimes seems what I have a relly poor vocabulary but as I suppose writing is a one way how I can improve that skill.&lt;/p&gt;
+&lt;p&gt;But in general it is at the same fun and hard to express thoughts in english.
+Sometimes seems what I have a really poor vocabulary but as I suppose writing is a one way how I can improve that skill.&lt;/p&gt;
 &lt;p&gt;See you later.&lt;/p&gt;
-&lt;p&gt;Sincerely,
-kiddick.&lt;/p&gt;</summary><category term="thoughts"></category></entry><entry><title>Custom Sublime Text build system for python on Fedora 22</title><link href="/custom-sublime-text-build-system-for-python-on-fedora-22.html" rel="alternate"></link><updated>2015-11-09T00:00:00+03:00</updated><author><name>xi</name></author><id>tag:,2015-11-09:custom-sublime-text-build-system-for-python-on-fedora-22.html</id><summary type="html">&lt;p&gt;We need to configure custom build system in Sublime Text. The main requirement is possibility to execute code in new window.&lt;/p&gt;
+&lt;p&gt;Sincerely, kiddick.&lt;/p&gt;</summary><category term="thoughts"></category></entry><entry><title>Custom Sublime Text build system for python on Fedora 22</title><link href="/custom-sublime-text-build-system-for-python-on-fedora-22.html" rel="alternate"></link><updated>2015-11-09T00:00:00+03:00</updated><author><name>xi</name></author><id>tag:,2015-11-09:custom-sublime-text-build-system-for-python-on-fedora-22.html</id><summary type="html">&lt;p&gt;We need to configure custom build system in Sublime Text. The main requirement is possibility to execute code in new window.&lt;/p&gt;
 &lt;p&gt;Let's create new build system.&lt;/p&gt;
 &lt;p&gt;Tools &amp;gt; Build System &amp;gt; New Build System...&lt;/p&gt;
 &lt;p&gt;Configuration is below.&lt;/p&gt;
