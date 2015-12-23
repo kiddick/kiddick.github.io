@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <title>xi blog</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css">
+
+
+    <meta name="tags" content="HTML" />
+    <meta name="tags" content="CSS" />
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+            <ul>
+                <li>
+                    <h1><a href="/" id="homepage">xi blog <strong></strong></a></h1>
+                </li>
+                <li>
+                    <div class="social">
+                    <ul>
+                        <!-- <li><a href="http://github.com/kiddick" target="_blank"><i>github</i></a></li> -->
+                        <li><a class="sc-github" href="http://github.com/kiddick" target="_blank"><i class="fa fa-github"></i></a></li>
+                        <!-- <li><a href="http://stackoverflow.com/users/3990145/xi" target="_blank"><i>stack-overflow</i></a></li> -->
+                        <li><a class="sc-stack-overflow" href="http://stackoverflow.com/users/3990145/xi" target="_blank"><i class="fa fa-stack-overflow"></i></a></li>
+                    </div>
+                    </ul>
+                </li>
+            </ul>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/insidious-pre-tag.html" rel="bookmark"
+         title="Permalink to Insidious ≺pre≻ tag">Insidious &#8826;pre&#8827; tag</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2015-12-23T00:00:00+04:00">
+      <div>
+        Wed 23 December 2015
+      </div>
+    </time>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>I have faced with strange behavior in inheritance of attributes in CSS. Since I've added <code>pygments.css</code> with syntax highlighting everything was ok apart from default font in block with highlighting of syntax.</p>
+<p>There is several classes and several nested tags:</p>
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;parent&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;pre&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;another&quot;</span><span class="nt">&gt;</span>
+      inner-pre-div
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/pre&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;another&quot;</span><span class="nt">&gt;</span>
+     inner-div
+   <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+
+<p>and some styling for that:</p>
+<div class="highlight"><pre><span class="nc">.parent</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">25px</span><span class="p">;</span>
+  <span class="k">font-family</span><span class="o">:</span> <span class="k">cursive</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.another</span> <span class="p">{</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">35px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="k">font-family</span><span class="o">:</span> <span class="n">Courier</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>For some reason text in <code>div</code> nested to <code>pre</code> hasn't inherited <code>font-family</code> attribute from <code>parent</code> class. Although <code>div</code> nested to another <code>div</code> has worked correctly.</p>
+<p>The reason for this is the specific of <code>pre</code> tag.
+There are next default values for that:</p>
+<div class="highlight"><pre><span class="nt">pre</span> <span class="p">{</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="k">monospace</span><span class="p">;</span>
+    <span class="k">white-space</span><span class="o">:</span> <span class="n">pre</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">1em</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>So it overrides <code>font-family</code> by default.
+That's why we were unable to change it in <code>another</code> class.</p>
+<p>We need explicitly override <code>font-family</code> for <code>pre</code> tag:</p>
+<div class="highlight"><pre><span class="na">.parent</span> <span class="no">pre</span> <span class="err">{</span>
+  <span class="nl">font-family:</span> <span class="nf">cursive</span><span class="err">;</span>
+<span class="err">}</span>
+</pre></div>
+
+
+<p>There is <a href="https://jsfiddle.net/029rz40w/">jsfiddle</a> with examined example.</p>
+  </div><!-- /.entry-content -->
+  <div class="btn_wrapper">
+      <a class="btn" href="/">Go back</a>
+  </div>
+</section>
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</html>
