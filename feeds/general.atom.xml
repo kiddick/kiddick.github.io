@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xi blog</title><link href="/" rel="alternate"></link><link href="/feeds/general.atom.xml" rel="self"></link><id>/</id><updated>2015-12-18T00:00:00+03:00</updated><entry><title>Blog rebooting</title><link href="/blog-rebooting.html" rel="alternate"></link><updated>2015-12-18T00:00:00+03:00</updated><author><name>xi</name></author><id>tag:,2015-12-18:blog-rebooting.html</id><summary type="html">&lt;p&gt;Hi there!&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xi blog</title><link href="/" rel="alternate"></link><link href="/feeds/general.atom.xml" rel="self"></link><id>/</id><updated>2015-12-18T00:00:00+04:00</updated><entry><title>Blog rebooting</title><link href="/blog-rebooting.html" rel="alternate"></link><updated>2015-12-18T00:00:00+04:00</updated><author><name>xi</name></author><id>tag:,2015-12-18:blog-rebooting.html</id><summary type="html">&lt;p&gt;Hi there!&lt;/p&gt;
 &lt;p&gt;I've decided to reboot my blog!
 Since I'm trying to learn some javascript I need some real practice with it.
 I should at the same time learn and refresh some basics HTML and CSS.

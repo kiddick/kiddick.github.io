@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>xi blog</title><link>/</link><description></description><atom:link href="/feeds/xi.rss.xml" rel="self"></atom:link><lastBuildDate>Sun, 20 Dec 2015 00:00:00 +0300</lastBuildDate><item><title>Button for continuation of reading</title><link>/button-for-continuation-of-reading.html</link><description>&lt;p&gt;Hi folks!&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>xi blog</title><link>/</link><description></description><atom:link href="/feeds/xi.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 23 Dec 2015 00:00:00 +0400</lastBuildDate><item><title>Insidious ≺pre≻ tag</title><link>/insidious-pre-tag.html</link><description>&lt;p&gt;I have faced with strange behavior in inheritance of attributes in CSS. Since I've added &lt;code&gt;pygments.css&lt;/code&gt; with syntax highlighting everything was ok apart from default font in block with highlighting of syntax.&lt;/p&gt;
+&lt;p&gt;There is several classes and several nested tags:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;parent&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;pre&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;another&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+      inner-pre-div
+    &lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/pre&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;another&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+     inner-div
+   &lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and some styling for that:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nc"&gt;.parent&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;25px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="k"&gt;font-family&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="k"&gt;cursive&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nc"&gt;.another&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;35px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nt"&gt;body&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;font-family&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Courier&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;For some reason text in &lt;code&gt;div&lt;/code&gt; nested to &lt;code&gt;pre&lt;/code&gt; hasn't inherited &lt;code&gt;font-family&lt;/code&gt; attribute from &lt;code&gt;parent&lt;/code&gt; class. Although &lt;code&gt;div&lt;/code&gt; nested to another &lt;code&gt;div&lt;/code&gt; has worked correctly.&lt;/p&gt;
+&lt;p&gt;The reason for this is the specific of &lt;code&gt;pre&lt;/code&gt; tag.
+There are next default values for that:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="k"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;font-family&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="k"&gt;monospace&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;white-space&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="m"&gt;1em&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;So it overrides &lt;code&gt;font-family&lt;/code&gt; by default.
+That's why we were unable to change it in &lt;code&gt;another&lt;/code&gt; class.&lt;/p&gt;
+&lt;p&gt;We need explicitly override &lt;code&gt;font-family&lt;/code&gt; for &lt;code&gt;pre&lt;/code&gt; tag:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="na"&gt;.parent&lt;/span&gt; &lt;span class="no"&gt;pre&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;
+  &lt;span class="nl"&gt;font-family:&lt;/span&gt; &lt;span class="nf"&gt;cursive&lt;/span&gt;&lt;span class="err"&gt;;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;There is &lt;a href="https://jsfiddle.net/029rz40w/"&gt;jsfiddle&lt;/a&gt; with examined example.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xi</dc:creator><pubDate>Wed, 23 Dec 2015 00:00:00 +0400</pubDate><guid>tag:,2015-12-23:insidious-pre-tag.html</guid><category>HTML</category><category>CSS</category></item><item><title>Button for continuation of reading</title><link>/button-for-continuation-of-reading.html</link><description>&lt;p&gt;Hi folks!&lt;/p&gt;
 &lt;p&gt;Today we will try to create a simple CSS button to blog. It will be used as button for continuation reading and will be added on preview of pages block.&lt;/p&gt;
 &lt;p&gt;It should be look like:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="design" src="images/2015_12_20_1.png" /&gt;&lt;/p&gt;
@@ -32,7 +84,7 @@ Yep there are several approaches but all of them may cause to serious issues.&lt
 &lt;p&gt;At least need to add some styling according to my blog color scheme.
 Result:&lt;/p&gt;
 &lt;p&gt;&lt;img alt="design" src="images/2015_12_20_2.png" /&gt;&lt;/p&gt;
-&lt;p&gt;Enjoy!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xi</dc:creator><pubDate>Sun, 20 Dec 2015 00:00:00 +0300</pubDate><guid>tag:,2015-12-20:button-for-continuation-of-reading.html</guid><category>HTML</category><category>CSS</category></item><item><title>First steps with design of this blog</title><link>/first-steps-with-design-of-this-blog.html</link><description>&lt;p&gt;I am getting this course on &lt;a href="https://www.codecademy.com/learn/web"&gt;HTML &amp;amp; CSS | Codecademy&lt;/a&gt; and I'll try to apply some skills gained on this course right here.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xi</dc:creator><pubDate>Sun, 20 Dec 2015 00:00:00 +0400</pubDate><guid>tag:,2015-12-20:button-for-continuation-of-reading.html</guid><category>HTML</category><category>CSS</category></item><item><title>First steps with design of this blog</title><link>/first-steps-with-design-of-this-blog.html</link><description>&lt;p&gt;I am getting this course on &lt;a href="https://www.codecademy.com/learn/web"&gt;HTML &amp;amp; CSS | Codecademy&lt;/a&gt; and I'll try to apply some skills gained on this course right here.&lt;/p&gt;
 &lt;p&gt;So I am starting with basic CSS for my pages.
 First of all I want center body of pages and limit by some way width of block wit blog post.&lt;/p&gt;
 &lt;p&gt;Seems it is possible by applying fixed width and margin property to a body.
@@ -90,7 +142,7 @@ Relative to the font-size of the element (2em means 2 times the size of the curr
 
 
 &lt;p&gt;For now it looks:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="design" src="images/2015_12_19_1.png" /&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xi</dc:creator><pubDate>Sat, 19 Dec 2015 00:00:00 +0300</pubDate><guid>tag:,2015-12-19:first-steps-with-design-of-this-blog.html</guid><category>HTML</category><category>CSS</category></item><item><title>Blog rebooting</title><link>/blog-rebooting.html</link><description>&lt;p&gt;Hi there!&lt;/p&gt;
+&lt;p&gt;&lt;img alt="design" src="images/2015_12_19_1.png" /&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xi</dc:creator><pubDate>Sat, 19 Dec 2015 00:00:00 +0400</pubDate><guid>tag:,2015-12-19:first-steps-with-design-of-this-blog.html</guid><category>HTML</category><category>CSS</category></item><item><title>Blog rebooting</title><link>/blog-rebooting.html</link><description>&lt;p&gt;Hi there!&lt;/p&gt;
 &lt;p&gt;I've decided to reboot my blog!
 Since I'm trying to learn some javascript I need some real practice with it.
 I should at the same time learn and refresh some basics HTML and CSS.
@@ -103,7 +155,7 @@ Just need to write a liitle bit more than just a couple of words!&lt;/p&gt;
 &lt;p&gt;But in general it is at the same fun and hard to express thoughts in english.
 Sometimes seems what I have a really poor vocabulary but as I suppose writing is a one way how I can improve that skill.&lt;/p&gt;
 &lt;p&gt;See you later.&lt;/p&gt;
-&lt;p&gt;Sincerely, kiddick.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xi</dc:creator><pubDate>Fri, 18 Dec 2015 00:00:00 +0300</pubDate><guid>tag:,2015-12-18:blog-rebooting.html</guid><category>thoughts</category></item><item><title>Custom Sublime Text build system for python on Fedora 22</title><link>/custom-sublime-text-build-system-for-python-on-fedora-22.html</link><description>&lt;p&gt;We need to configure custom build system in Sublime Text. The main requirement is possibility to execute code in new window.&lt;/p&gt;
+&lt;p&gt;Sincerely, kiddick.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xi</dc:creator><pubDate>Fri, 18 Dec 2015 00:00:00 +0400</pubDate><guid>tag:,2015-12-18:blog-rebooting.html</guid><category>thoughts</category></item><item><title>Custom Sublime Text build system for python on Fedora 22</title><link>/custom-sublime-text-build-system-for-python-on-fedora-22.html</link><description>&lt;p&gt;We need to configure custom build system in Sublime Text. The main requirement is possibility to execute code in new window.&lt;/p&gt;
 &lt;p&gt;Let's create new build system.&lt;/p&gt;
 &lt;p&gt;Tools &amp;gt; Build System &amp;gt; New Build System...&lt;/p&gt;
 &lt;p&gt;Configuration is below.&lt;/p&gt;
@@ -111,7 +163,7 @@ Sometimes seems what I have a really poor vocabulary but as I suppose writing is
     &lt;span class="s"&gt;&amp;quot;cmd&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;gnome-terminal&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;-x&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;bash&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;-c&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;python $file; read&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="c"&gt;# run new terminal&lt;/span&gt;
     &lt;span class="s"&gt;&amp;quot;shell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;false&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt; 
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xi</dc:creator><pubDate>Mon, 09 Nov 2015 00:00:00 +0300</pubDate><guid>tag:,2015-11-09:custom-sublime-text-build-system-for-python-on-fedora-22.html</guid><category>sublime text</category><category>build system</category></item><item><title>Subprocess usage</title><link>/subprocess-usage.html</link><description>&lt;p&gt;Let's view several cases.&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xi</dc:creator><pubDate>Mon, 09 Nov 2015 00:00:00 +0400</pubDate><guid>tag:,2015-11-09:custom-sublime-text-build-system-for-python-on-fedora-22.html</guid><category>sublime text</category><category>build system</category></item><item><title>Subprocess usage</title><link>/subprocess-usage.html</link><description>&lt;p&gt;Let's view several cases.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://docs.python.org/2/library/subprocess.html#subprocess.call" target="_blank"&gt;subprocess.call(args, *, stdin=None, stdout=None, stderr=None, shell=False)&lt;/a&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -171,4 +223,4 @@ Sometimes seems what I have a really poor vocabulary but as I suppose writing is
 
 &lt;span class="n"&gt;args&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;ls&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;-l&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xi</dc:creator><pubDate>Mon, 09 Nov 2015 00:00:00 +0300</pubDate><guid>tag:,2015-11-09:subprocess-usage.html</guid><category>python</category><category>subprocess</category></item></channel></rss>
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xi</dc:creator><pubDate>Mon, 09 Nov 2015 00:00:00 +0400</pubDate><guid>tag:,2015-11-09:subprocess-usage.html</guid><category>python</category><category>subprocess</category></item></channel></rss>
