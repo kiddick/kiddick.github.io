@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>xi blog</title><link>/</link><description></description><atom:link href="/feeds/xi.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 23 Dec 2015 00:00:00 +0400</lastBuildDate><item><title>Insidious ≺pre≻ tag</title><link>/insidious-pre-tag.html</link><description>&lt;p&gt;I have faced with strange behavior in inheritance of attributes in CSS. Since I've added &lt;code&gt;pygments.css&lt;/code&gt; with syntax highlighting everything was ok apart from default font in block with highlighting of syntax.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>xi blog</title><link>/</link><description></description><atom:link href="/feeds/xi.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 30 Dec 2015 00:00:00 +0400</lastBuildDate><item><title>Convert numbers between positional numeral systems</title><link>/convert-numbers-between-positional-numeral-systems.html</link><description>&lt;p&gt;Let's view basic approach to convert numbers between different positional numeral systems on particular example:&lt;/p&gt;
+&lt;p&gt;We need to convert $336_8$ to decimal.&lt;/p&gt;
+&lt;p&gt;$336_8 = 3 * 8 ^ 2 + 3 * 8 ^ 1 + 6 * 8 ^ 0 = 3 * 64 + 24 + 6 = 222_{10}$&lt;/p&gt;
+&lt;p&gt;$l$ - length of initial number, $n$ - base of numeral system, $r$ - result:&lt;/p&gt;
+&lt;p&gt;$r = x_1 * n^{l -1} + x_2 * n^{l-2} + x_3 * n^{l-3} + ... + x_l*n^0 $&lt;/p&gt;
+&lt;p&gt;So it is easy to programming with using power function. But there is an another approach. We could use loop for that purpose:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;oct&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Some details for example above:&lt;/p&gt;
+&lt;p&gt;1st iteration $r = n*0 + x_1$&lt;/p&gt;
+&lt;p&gt;2nd iteration $r = nx_1 + x_2$&lt;/p&gt;
+&lt;p&gt;3rd iteration $r = n(n*x_1 + x_2) + x_3 = n^2x_1 + nx_2 + x_3$&lt;/p&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;p&gt;$l$ iteration $r = x_1 * n^{l -1} + x_2 * n^{l-2} + x_3 * n^{l-3} + ... + x_l*n^0 $&lt;/p&gt;
+&lt;p&gt;Exactly the same result as above.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xi</dc:creator><pubDate>Wed, 30 Dec 2015 00:00:00 +0400</pubDate><guid>tag:,2015-12-30:convert-numbers-between-positional-numeral-systems.html</guid><category>python</category><category>math</category></item><item><title>Insidious ≺pre≻ tag</title><link>/insidious-pre-tag.html</link><description>&lt;p&gt;I have faced with strange behavior in inheritance of attributes in CSS. Since I've added &lt;code&gt;pygments.css&lt;/code&gt; with syntax highlighting everything was ok apart from default font in block with highlighting of syntax.&lt;/p&gt;
 &lt;p&gt;There is several classes and several nested tags:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;parent&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
   &lt;span class="nt"&gt;&amp;lt;pre&amp;gt;&lt;/span&gt;

@@ -142,3 +142,8 @@ hr {
 .btn:hover, .btn:active {
     background-color: #011627
 }
+
+.MathJax_Display {
+    /*color: inherit;*/
+    text-align: left;
+}
