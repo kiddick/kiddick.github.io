@@ -19,8 +19,8 @@
     </script>
 
 
-    <meta name="tags" content="HTML" />
-    <meta name="tags" content="CSS" />
+    <meta name="tags" content="python" />
+    <meta name="tags" content="lists" />
 
 </head>
 
@@ -52,52 +52,36 @@
 <section id="content" class="body">
   <header>
     <h2 class="entry-title">
-      <a href="/button-for-continuation-of-reading.html" rel="bookmark"
-         title="Permalink to Button for continuation of reading">Button for continuation of reading</a></h2>
+      <a href="/empty-list-by-list-comprehension.html" rel="bookmark"
+         title="Permalink to Empty list by list comprehension">Empty list by list comprehension</a></h2>
  
   </header>
   <footer class="post-info">
-    <time class="published" datetime="2015-12-20T00:00:00+04:00">
+    <time class="published" datetime="2016-01-19T00:00:00+04:00">
       <div>
-        Sun 20 December 2015
+        Tue 19 January 2016
       </div>
     </time>
   </footer><!-- /.post-info -->
   <div class="entry-content">
-    <p>Hi folks!</p>
-<p>Today we will try to create a simple CSS button to blog. It will be used as button for continuation reading and will be added on preview of pages block.</p>
-<p>It should be look like:</p>
-<p><img alt="design" src="images/2015_12_20_1.png" /></p>
-<p>Cool! Let's start.
-First of all we need to specify some html element for that. It could be <code>div</code> or may be <code>a</code>. Let's pick <code>a</code> and create new class for that.</p>
-<p>We should add it to our templates:</p>
-<div class="highlight"><pre>    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn&quot;</span> <span class="na">href=</span><span class="s">&quot;{{ SITEURL }}/{{ article.url }}&quot;</span><span class="nt">&gt;</span>Continue reading<span class="nt">&lt;/a&gt;</span>
+    <p>We will view some interesting case with list comprehension in python. Actually we have the spoiler in the name of the article. But don't worry.</p>
+<p>What if when we are trying to create a new list by list comprehension with some condition and no element would meet requirements?</p>
+<p>Let's check this out.</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">suite</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">suite</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">suite</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="p">[]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">suite</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="ne">IndexError</span><span class="p">:</span> <span class="nb">list</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
 </pre></div>
 
 
-<p>So our class for that purpose named <code>btn</code>.
-Let's care about positioning. I want to put it at the lower right corner of article preview.</p>
-<p>It quite a hard task in CSS :)
-I am not an expert in positioning but it is really weird why there isn't an easy way to apply horizontal alignment of elements!
-Yep there are several approaches but all of them may cause to serious issues.</p>
-<p><a href="http://www.w3schools.com/css/css_align.asp">CSS Layout - Horizontal Align</a></p>
-<p>Basics idea given on article, link is above.</p>
-<p>Firstly I've tried to use <code>float: right</code>. But it breaks my marking since according to <a href="http://www.w3.org/TR/CSS21/visuren.html#floats">9.5 Floats</a>:</p>
-<blockquote>
-<p>Since a float is not in the flow, non-positioned block boxes created before and after the float box flow vertically as if the float did not exist. However, the current and subsequent line boxes created next to the float are shortened as necessary to make room for the margin box of the float. </p>
-</blockquote>
-<p>That means that float formatted elements not included in common flow of elements of page. Due to that reason I've decided to use trick with <code>div</code>.</p>
-<p>I've created <code>div</code> and putted my <code>&lt;a class="btn"&gt;</code> to that <code>div</code>.</p>
-<div class="highlight"><pre>    <span class="nt">margin-left</span><span class="o">:</span> <span class="nt">auto</span><span class="o">;</span>
-    <span class="nt">margin-right</span><span class="o">:</span> <span class="nt">0</span><span class="o">;</span>
-</pre></div>
-
-
-<p>Applied some formatting to that <code>div</code>. And Voila! Now <code>a</code> have moved to the right together with <code>div</code>. Quite easy!</p>
-<p>At least need to add some styling according to my blog color scheme.
-Result:</p>
-<p><img alt="design" src="images/2015_12_20_2.png" /></p>
-<p>Enjoy!</p>
+<p>As you can see we are just getting an empty list.</p>
+<p>We need to care about such edge cases since it may lead to errors.
+And if we need to get an element by index we should verifications or error handling with exceptions.</p>
   </div><!-- /.entry-content -->
   <div class="btn_wrapper">
       <a class="btn" href="/">Go back</a>
