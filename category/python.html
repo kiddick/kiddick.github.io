@@ -50,6 +50,26 @@
 <ul id="post-list">
         <li>
             <article class="hentry">
+                    <header> <h2 class="entry-title"><a href="/making-a-flat-list-out-of-list-of-lists.html" rel="bookmark" title="Permalink to Making a flat list out of list of lists">Making a flat list out of list of lists</a></h2> </header>
+                    <footer class="post-info">
+                        <time class="published" datetime="2016-01-20T00:00:00+04:00">
+                            <div>
+                                Wed 20 January 2016
+                            </div>
+                        </time>
+                    </footer><!-- /.post-info -->
+                    <div class="entry-content"> <p>Sometimes we have arbitrary nested lists and we need to make them flat. There are several approaches to do that.</p>
+<p>First of all let's view approach based on list comprehension.</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">suite</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">suite</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist ...</span></pre></div> </div><!-- /.entry-content -->
+            </article>
+            <div class="btn_wrapper">
+                <a class="btn" href="/making-a-flat-list-out-of-list-of-lists.html">Continue reading</a>
+            </div>
+        </li>
+        <hr>
+        <li>
+            <article class="hentry">
                     <header> <h2 class="entry-title"><a href="/empty-list-by-list-comprehension.html" rel="bookmark" title="Permalink to Empty list by list comprehension">Empty list by list comprehension</a></h2> </header>
                     <footer class="post-info">
                         <time class="published" datetime="2016-01-19T00:00:00+04:00">
