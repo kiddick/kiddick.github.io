@@ -1,5 +1,6 @@
-# xi blog
+Personal blog powered by Peican
+-------
 
-http://kiddick.github.io/
+Live: http://kiddick.github.io/
 
-[SRC](https://github.com/kiddick/kiddick.github.io-src).
+[Source](https://github.com/kiddick/kiddick.github.io-src/)
