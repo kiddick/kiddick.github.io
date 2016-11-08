@@ -1,8 +1,8 @@
 <!doctype html>
 <meta charset="utf-8">
-<link rel="stylesheet" href="./static/style.css">
-<link rel="stylesheet" href="./static/pygments.css">
-<title>Welcome!</title>
+<link rel="stylesheet" href="../../static/style.css">
+<link rel="stylesheet" href="../../static/pygments.css">
+<title>xi blog | Custom Sublime Text build system for python on Fedora 22</title>
 
 <body id="index" class="home">
     <a href="http://github.com/kiddick" class="github-corner">
@@ -21,10 +21,29 @@
     </header>
     
 <section id="content" class="body">
-    <h1>Welcome!</h1>
-    <p>Hi!
-There is my personal blog :)
-I trying hard to migrate to Lektor so there is just temporary link to actually <a href="blog/">blog</a> section.</p>
+  
+  <div class="blog-post">
+  
+    <h2>Custom Sublime Text build system for python on Fedora 22</h2>
+  
+  <footer class="post-info">
+    <time class="published">
+      <div>
+        2015-11-09
+      </div>
+    </time>
+  </footer>
+  <p>We need to configure custom build system in Sublime Text. The main requirement is possibility to execute code in new window.</p>
+<p>Let's create new build system.</p>
+<p>Tools &gt; Build System &gt; New Build System...</p>
+<p>Configuration is below.</p>
+<div class="hll"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;cmd&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;gnome-terminal&quot;</span><span class="p">,</span> <span class="s2">&quot;-x&quot;</span><span class="p">,</span> <span class="s2">&quot;bash&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">,</span> <span class="s2">&quot;python $file; read&quot;</span><span class="p">],</span> <span class="c1"># run new terminal</span>
+    <span class="s2">&quot;shell&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+  </div>
 
 </section>
 
