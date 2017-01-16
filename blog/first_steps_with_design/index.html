@@ -46,14 +46,14 @@ Probably later that should be changed.</p>
 <p><a href="http://www.w3schools.com/css/css_margin.asp">CSS Margin</a></p>
 <p>It is possible to specify margin for each side of and element separately.</p>
 <p>I have faced with:</p>
-<pre><code>margin: 0 auto;
-</code></pre>
+<div class="hll"><pre><span></span><span class="nt">margin</span><span class="o">:</span> <span class="nt">0</span> <span class="nt">auto</span><span class="o">;</span>
+</pre></div>
 <p>and was not sure how I shroud interpret that.</p>
 <p>But according to example from documentation:</p>
-<pre><code>margin: 25px 50px;
-    top and bottom margins are 25px
-    right and left margins are 50px
-</code></pre>
+<div class="hll"><pre><span></span><span class="nt">margin</span><span class="o">:</span> <span class="nt">25px</span> <span class="nt">50px</span><span class="o">;</span>
+    <span class="nt">top</span> <span class="nt">and</span> <span class="nt">bottom</span> <span class="nt">margins</span> <span class="nt">are</span> <span class="nt">25px</span>
+    <span class="nt">right</span> <span class="nt">and</span> <span class="nt">left</span> <span class="nt">margins</span> <span class="nt">are</span> <span class="nt">50px</span>
+</pre></div>
 <p>It sets <code>0</code> for <code>top and bottom</code> and <code>auto</code> for <code>right and left</code> borders.</p>
 <p>Related question <a href="http://stackoverflow.com/questions/3170772/what-does-auto-do-in-margin0-auto">css - What does auto do in margin:0 auto? - Stack Overflow</a></p>
 <p>I'll refer to SO for a ability to refresh knowledge quickly in future.</p>
@@ -62,9 +62,9 @@ Probably later that should be changed.</p>
 <p><a href="http://stackoverflow.com/questions/963636/why-cant-i-center-with-margin-0-auto">html - Why can't I center with margin: 0 auto? - Stack Overflow</a></p>
 <p>Some information about CSS units for expressing a length:
 <a href="http://www.w3schools.com/cssref/css_units.asp">CSS Units</a></p>
-<pre><code>em
-Relative to the font-size of the element (2em means 2 times the size of the current font)
-</code></pre>
+<div class="hll"><pre><span></span><span class="nt">em</span>
+<span class="nt">Relative</span> <span class="nt">to</span> <span class="nt">the</span> <span class="nt">font-size</span> <span class="nt">of</span> <span class="nt">the</span> <span class="nt">element</span> <span class="o">(</span><span class="nt">2em</span> <span class="nt">means</span> <span class="nt">2</span> <span class="nt">times</span> <span class="nt">the</span> <span class="nt">size</span> <span class="nt">of</span> <span class="nt">the</span> <span class="nt">current</span> <span class="nt">font</span><span class="o">)</span>
+</pre></div>
 <blockquote><p>The CSS padding properties define the white space between the element content and the element border.</p>
 </blockquote>
 <p>It is possible to specify padding for each side of and element separately too. There is same approach.</p>
@@ -72,14 +72,14 @@ Relative to the font-size of the element (2em means 2 times the size of the curr
 <p>Border settings</p>
 <p><a href="http://www.w3schools.com/css/css_border.asp">CSS Borders</a></p>
 <p>Shorten code to set up all properties simultaneously:</p>
-<pre><code>    border-width
-    border-style (required)
-    border-color
+<div class="hll"><pre><span></span>    <span class="nt">border-width</span>
+    <span class="nt">border-style</span> <span class="o">(</span><span class="nt">required</span><span class="o">)</span>
+    <span class="nt">border-color</span>
 
-    p {
-        border: 5px solid red;
-    }
-</code></pre>
+    <span class="nt">p</span> <span class="p">{</span>
+        <span class="nb">border</span><span class="o">:</span> <span class="m">5px</span> <span class="nb">solid</span> <span class="nb">red</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
 <p>For now it looks:</p>
 <p><img src="design.png" alt="design"></p>
 
